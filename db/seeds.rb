@@ -1,9 +1,55 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+[Topic, Event, Person, Location, Resource].each(&:delete_all)
+puts "data deleted"
+
+
+Topic.create!(
+  title: "American Revolution",
+  description: "Colonial patriots fought for freedom against England and won",
+  start_year: 1775,
+  end_year: 1783,
+  image: "https://picsum.photos/200/300"
+)
+puts "topic created"
+
+Event.create!(
+  name: "Crossing the Deleware",
+  start_year: 1776,
+  end_year: 1776,
+  date_display: "December 25-26, 1776",
+  summary: "Washington crossed the delaware river to launch a surpirse attack on the British and Hessian troops.",
+  image: "https://picsum.photos/200/300"
+)
+puts "event created"
+
+Person.create!(
+  name: "George Washington",
+  birth_year: 1732,
+  death_year: 1799,
+  date_display: "February 22, 1732 - December 14, 1799",
+  biography: "Fought in the French and Indian War, General of the colonial troops in the Revolutionary war, first president of the Untited States",
+  image: "https://picsum.photos/200/300"
+)
+puts "event created"
+
+
+Location.create!(
+  name: "Deleware Water Gap",
+  country: "United States of America",
+  continent: "North America",
+  longitude: -74.8683,
+  latitude: 40.2950,
+  description: "Water, icy in winter",
+  image: "https://picsum.photos/200/300"
+)
+puts "location created"
+
+
+Resource.create!(
+  title: "Washinton Crossing the Delaware",
+  author: "Raymond L. Stehle",
+  organization: "Pennsylvania State University",
+  source_type: "pdf copy of a book",
+  link: "https://journals.psu.edu/phj/article/view/23022/22791",
+  description: "written in 1964, about the artist that painted the famous crossing the delaware painting."
+)
+puts "resource created"

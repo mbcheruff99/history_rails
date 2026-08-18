@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_08_18_012346) do
+ActiveRecord::Schema[8.1].define(version: 2026_08_18_014514) do
   create_table "events", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "date_display"
@@ -33,7 +33,9 @@ ActiveRecord::Schema[8.1].define(version: 2026_08_18_012346) do
     t.decimal "latitude"
     t.decimal "longitude"
     t.string "name"
+    t.integer "person_id"
     t.datetime "updated_at", null: false
+    t.index ["person_id"], name: "index_locations_on_person_id"
   end
 
   create_table "people", force: :cascade do |t|
@@ -69,4 +71,5 @@ ActiveRecord::Schema[8.1].define(version: 2026_08_18_012346) do
   end
 
   add_foreign_key "events", "topics"
+  add_foreign_key "locations", "people"
 end

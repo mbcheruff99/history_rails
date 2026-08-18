@@ -1,4 +1,4 @@
-[Topic, Event, Person, Location, Resource].each(&:delete_all)
+[Event, Topic, Location, Person, Resource].each(&:delete_all)
 puts "data deleted"
 
 
@@ -31,9 +31,9 @@ Person.create!(
   biography: "Fought in the French and Indian War, General of the colonial troops in the Revolutionary war, first president of the Untited States",
   image: "https://picsum.photos/200/300"
 )
-puts "event created"
+puts "person created"
 
-
+person = Person.find_by(name: "George Washington")
 Location.create!(
   name: "Deleware Water Gap",
   country: "United States of America",
@@ -41,6 +41,7 @@ Location.create!(
   longitude: -74.8683,
   latitude: 40.2950,
   description: "Water, icy in winter",
+  person_id: person.id,
   image: "https://picsum.photos/200/300"
 )
 puts "location created"

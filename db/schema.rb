@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_08_18_030242) do
+ActiveRecord::Schema[8.1].define(version: 2026_08_18_032914) do
   create_table "event_locations", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.integer "event_id", null: false
@@ -76,6 +76,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_08_18_030242) do
     t.string "source_type"
     t.string "title"
     t.datetime "updated_at", null: false
+    t.integer "year"
   end
 
   create_table "source_links", force: :cascade do |t|

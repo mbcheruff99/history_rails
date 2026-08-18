@@ -2,7 +2,7 @@
 puts "data deleted"
 
 
-Topic.create!(
+topic = Topic.create!(
   title: "American Revolution",
   description: "Colonial patriots fought for freedom against England and won",
   start_year: 1775,
@@ -11,19 +11,18 @@ Topic.create!(
 )
 puts "topic created"
 
-topic = Topic.find_by(title: "American Revolution")
-
-topic.events.create!(
+event = Event.create!(
   name: "Crossing the Deleware",
   start_year: 1776,
   end_year: 1776,
   date_display: "December 25-26, 1776",
   summary: "Washington crossed the delaware river to launch a surpirse attack on the British and Hessian troops.",
-  image: "https://picsum.photos/200/300"
+  image: "https://picsum.photos/200/300",
+  topic: topic
 )
 puts "event created"
 
-Person.create!(
+person = Person.create!(
   name: "George Washington",
   birth_year: 1732,
   death_year: 1799,
@@ -33,8 +32,7 @@ Person.create!(
 )
 puts "person created"
 
-person = Person.find_by(name: "George Washington")
-Location.create!(
+location = Location.create!(
   name: "Deleware Water Gap",
   country: "United States of America",
   continent: "North America",
@@ -47,7 +45,7 @@ Location.create!(
 puts "location created"
 
 
-Resource.create!(
+resource = Resource.create!(
   title: "Washinton Crossing the Delaware",
   author: "Raymond L. Stehle",
   organization: "Pennsylvania State University",
@@ -56,3 +54,9 @@ Resource.create!(
   description: "written in 1964, about the artist that painted the famous crossing the delaware painting."
 )
 puts "resource created"
+
+EventPerson.create!(
+  event: event,
+  person: person
+)
+puts "event_person association created"

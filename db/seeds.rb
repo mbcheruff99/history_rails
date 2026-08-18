@@ -1,4 +1,4 @@
-[Event, Topic, Location, Person, Resource].each(&:delete_all)
+[EventLocation, EventPerson, Event, Topic, Location, Person, Resource].each(&:delete_all)
 puts "data deleted"
 
 
@@ -58,5 +58,11 @@ puts "resource created"
 EventPerson.create!(
   event: event,
   person: person
+)
+puts "event_person association created"
+
+EventLocation.create!(
+  event: event,
+  location: location
 )
 puts "event_person association created"

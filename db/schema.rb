@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_08_07_013538) do
+ActiveRecord::Schema[8.1].define(version: 2026_08_18_012346) do
   create_table "events", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "date_display"
@@ -19,7 +19,9 @@ ActiveRecord::Schema[8.1].define(version: 2026_08_07_013538) do
     t.string "name"
     t.integer "start_year"
     t.text "summary"
+    t.integer "topic_id", null: false
     t.datetime "updated_at", null: false
+    t.index ["topic_id"], name: "index_events_on_topic_id"
   end
 
   create_table "locations", force: :cascade do |t|
@@ -65,4 +67,6 @@ ActiveRecord::Schema[8.1].define(version: 2026_08_07_013538) do
     t.string "title"
     t.datetime "updated_at", null: false
   end
+
+  add_foreign_key "events", "topics"
 end

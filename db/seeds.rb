@@ -11,7 +11,9 @@ Topic.create!(
 )
 puts "topic created"
 
-Event.create!(
+topic = Topic.find_by(title: "American Revolution")
+
+topic.events.create!(
   name: "Crossing the Deleware",
   start_year: 1776,
   end_year: 1776,

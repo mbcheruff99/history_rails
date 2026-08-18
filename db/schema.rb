@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_08_18_023920) do
+ActiveRecord::Schema[8.1].define(version: 2026_08_18_030242) do
   create_table "event_locations", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.integer "event_id", null: false
@@ -78,6 +78,16 @@ ActiveRecord::Schema[8.1].define(version: 2026_08_18_023920) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "source_links", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.integer "linkable_id", null: false
+    t.string "linkable_type", null: false
+    t.integer "resource_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["linkable_type", "linkable_id"], name: "index_source_links_on_linkable"
+    t.index ["resource_id"], name: "index_source_links_on_resource_id"
+  end
+
   create_table "topics", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.text "description"
@@ -94,4 +104,5 @@ ActiveRecord::Schema[8.1].define(version: 2026_08_18_023920) do
   add_foreign_key "event_people", "people"
   add_foreign_key "events", "topics"
   add_foreign_key "locations", "people"
+  add_foreign_key "source_links", "resources"
 end

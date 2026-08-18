@@ -1,4 +1,4 @@
-[EventLocation, EventPerson, Event, Topic, Location, Person, Resource].each(&:delete_all)
+[SourceLink, EventLocation, EventPerson, Event, Topic, Location, Person, Resource].each(&:delete_all)
 puts "data deleted"
 
 
@@ -65,4 +65,24 @@ EventLocation.create!(
   event: event,
   location: location
 )
-puts "event_person association created"
+puts "event_location association created"
+
+SourceLink.create!(
+  resource: resource,
+  linkable: location
+)
+puts "source_link association location created"
+
+
+SourceLink.create!(
+  resource: resource,
+  linkable: event
+)
+puts "source_link association with event created"
+
+
+SourceLink.create!(
+  resource: resource,
+  linkable: person
+)
+puts "source_link association with person created"

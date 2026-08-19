@@ -24,7 +24,8 @@ end
 
 json.resources event.resources do |source|
   json.id source.id
-  json.title source.author
+  json.title source.title
+  json.author source.author
   json.year source.year
   json.organization source.organization
   json.source_type source.source_type

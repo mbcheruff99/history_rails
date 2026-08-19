@@ -9,6 +9,7 @@ json.events topic.events do |event|
   json.id event.id
   json.name event.name
   json.date_display event.date_display
+  json.image event.image
   json.summary event.summary
   json.image event.image
 end

@@ -5,6 +5,8 @@ json.start_year event.start_year
 json.end_year event.end_year
 json.summary event.summary
 json.image event.image
+json.created_at event.created_at
+json.updated_at event.updated_at
 
 json.people event.people do |person|
   json.id person.id

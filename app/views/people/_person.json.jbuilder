@@ -5,6 +5,8 @@ json.birth_year person.birth_year
 json.death_year person.death_year
 json.image person.image 
 json.biography person.biography
+json.created_at person.created_at
+json.updated_at person.updated_at
 
 json.events person.events do |event|
   json.id event.id

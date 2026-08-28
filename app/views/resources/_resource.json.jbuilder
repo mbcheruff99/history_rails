@@ -1,7 +1,9 @@
-json.id source.id
-json.title source.title
-json.author source.author
-json.year source.year
-json.organization source.organization
-json.description source.description
-json.link source.link
+json.id resource.id
+json.title resource.title
+json.author resource.author
+json.year resource.year
+json.organization resource.organization
+json.description resource.description
+json.link resource.link
+json.created_at resource.created_at
+json.updated_at resource.updated_at

@@ -5,6 +5,8 @@ json.continent locations.continent
 json.longitude locatiion.longitude
 json.latitude locatiion.latitude
 json.image locatiion.image
+json.created_at location.created_at
+json.updated_at location.updated_at
 
 json.events locatiion.events do |event|
   json.id event.id

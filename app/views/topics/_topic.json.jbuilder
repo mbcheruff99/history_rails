@@ -4,6 +4,8 @@ json.start_year topic.start_year
 json.end_year topic.end_year
 json.description topic.description
 json.image topic.image
+json.created_at topic.created_at
+json.updated_at topic.updated_at
 
 json.events topic.events do |event|
   json.id event.id

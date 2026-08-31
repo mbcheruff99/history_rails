@@ -7,4 +7,10 @@ Rails.application.routes.draw do
   patch "topics/:id" => "topics#update"
   delete "topics/:id" => "topics#destroy"
   
+  get "/events" => "events#index"
+  get "/events/:id" => "events#show"
+  post "events" => "events#create"
+  patch "/events/:id" => "events#update"
+  delete "events/:id" => "events#destroy"
+  
 end

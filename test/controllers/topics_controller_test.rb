@@ -15,13 +15,19 @@ class TopicsControllerTest < ActionDispatch::IntegrationTest
     assert_response 200
 
     data = JSON.parse(response.body)
-    assert_equal ["id", "title", "start_year", "end_year", "description", "image", "updated_at", "events"], data.keys
+    assert_equal ["id", "title", "start_year", "end_year", "description", "image", "created_at", "updated_at",  "events"], data.keys
   end
   
   test "create" do
     assert_difference "Topic.count", 1 do
-      post "/topics.json", params: { title: "test", start_year: 1, end_year: 1, description: "stuff", image: "link"}
-      assert_response 200
+      post "/topics.json", params: { 
+        title: "test", 
+        start_year: 1, 
+        end_year: 1, 
+        description: "stuff", 
+        image: "link"
+      }
+      assert_response 201
     end
   end
 
@@ -36,7 +42,7 @@ class TopicsControllerTest < ActionDispatch::IntegrationTest
   
   test "destroy" do 
     assert_difference "Topic.count", -1 do
-      delete "/topics/#{Topic.first.id}"
+      delete "/topics/#{Topic.first.id}.json"
       assert_response 200
     end
   end

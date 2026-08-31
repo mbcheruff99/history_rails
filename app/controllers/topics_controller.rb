@@ -13,10 +13,10 @@ class TopicsController < ApplicationController
   def create
     @topic = Topic.new(topic_params)
      
-
     if @topic.save
       render :show, status: :created
-    else render json: { error: @topic.errors.full_message}, status: :unprocessable_entity
+    else 
+      render json: { error: @topic.errors.full_messages }, status: :unprocessable_entity
     end 
   end
 

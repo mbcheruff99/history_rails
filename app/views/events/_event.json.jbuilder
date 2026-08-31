@@ -16,12 +16,12 @@ json.people event.people do |person|
   json.biography person.biography
 end
 
-json.locations event.locations do |locatiion|
+json.locations event.locations do |location|
   json.id location.id
-  json.name locatiion.name
+  json.name location.name
   json.country location.country
-  json.continent locations.continent
-  json.image locatiion.image
+  json.continent location.continent
+  json.image location.image
 end
 
 json.resources event.resources do |source|

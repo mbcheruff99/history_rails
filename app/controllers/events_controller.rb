@@ -26,14 +26,13 @@ class EventsController < ApplicationController
     if @event.update(event_params)
       render :show, status: :ok
     else 
-      render json: { error: @event.errors.full_message}, status: :unprocessable_entity
+      render json: { error: @event.errors.full_messages }, status: :unprocessable_entity
     end
   end
     
   def destroy
-    @event = Event.find(params[:id])
-    @event.destroy
-    render json: { message: "Event successfully deleted"}
+    Event.find(params[:id]).destroy
+    render json: { message: "Event successfully deleted"}, status: :no_content
   end
   
   private

@@ -47,18 +47,17 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "update" do
-    event = Event.first
-    patch "/events/#{Event.first.id}.json", params: { name: "test" }
+    patch "/events/#{Event.first.id}.json", params: { name: "testing" }
     assert_response 200
 
     data = JSON.parse(response.body)
-    assert_equal "test", data["name"]
+    assert_equal "testing", data["name"]
   end
   
   test "destroy" do
     assert_difference "Event.count", -1 do
       delete "/events/#{Event.first.id}.json" 
-      assert_response 200     
+      assert_response 204     
     end
   end
 end

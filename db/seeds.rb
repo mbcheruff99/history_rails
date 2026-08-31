@@ -1,4 +1,4 @@
-[SourceLink, EventLocation, EventPerson, Event, Topic, Location, Person, Resource].each(&:delete_all)
+[SourceLink, PersonLocation, EventLocation, EventPerson, Event, Topic, Location, Person, Resource].each(&:delete_all)
 puts "data deleted"
 
 
@@ -39,7 +39,6 @@ location = Location.create!(
   longitude: -74.8683,
   latitude: 40.2950,
   description: "Water, icy in winter",
-  person_id: person.id,
   image: "https://picsum.photos/200/300"
 )
 puts "location created"

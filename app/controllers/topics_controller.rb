@@ -24,16 +24,15 @@ class TopicsController < ApplicationController
     @topic = Topic.find(params[:id])
    
     if @topic.update(topic_params)
-      render :show
+      render :show, status: :ok
     else
-      render json: { errors: @topic.errors.full_message }, status: :bad_request
+      render json: { errors: @topic.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @topic  = Topic.find(params[:id])
-    @topic.destroy
-    render json: { message: "Topic successfully deleted"}
+    Topic.find(params[:id]).destroy
+    render json: { message: "Topic successfully deleted"}, status: :no_content
   end
   
   private

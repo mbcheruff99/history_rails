@@ -27,7 +27,7 @@ json.resources location.resources do |source|
   json.link source.link
 end 
 
-json.people event.people do |person|
+json.people location.people do |person|
   json.id person.id
   json.name person.name
   json.date_display person.date_display

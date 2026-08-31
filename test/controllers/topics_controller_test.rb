@@ -32,7 +32,6 @@ class TopicsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "update" do
-    topic = Topic.first
     patch "/topics/#{Topic.first.id}.json", params: { title: "test"}
     assert_response 200
 
@@ -43,7 +42,7 @@ class TopicsControllerTest < ActionDispatch::IntegrationTest
   test "destroy" do 
     assert_difference "Topic.count", -1 do
       delete "/topics/#{Topic.first.id}.json"
-      assert_response 200
+      assert_response 204
     end
   end
   

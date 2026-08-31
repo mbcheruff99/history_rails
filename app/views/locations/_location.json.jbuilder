@@ -1,14 +1,14 @@
 json.id location.id
-json.name locatiion.name
+json.name location.name
 json.country location.country
-json.continent locations.continent
-json.longitude locatiion.longitude
-json.latitude locatiion.latitude
-json.image locatiion.image
+json.continent location.continent
+json.longitude location.longitude
+json.latitude location.latitude
+json.image location.image
 json.created_at location.created_at
 json.updated_at location.updated_at
 
-json.events locatiion.events do |event|
+json.events location.events do |event|
   json.id event.id
   json.name event.name
   json.date_display event.date_display
@@ -25,4 +25,12 @@ json.resources location.resources do |source|
   json.source_type source.source_type
   json.description source.description
   json.link source.link
+end 
+
+json.people event.people do |person|
+  json.id person.id
+  json.name person.name
+  json.date_display person.date_display
+  json.image person.image 
+  json.biography person.biography
 end

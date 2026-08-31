@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_08_18_032914) do
+ActiveRecord::Schema[8.1].define(version: 2026_08_31_024514) do
   create_table "event_locations", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.integer "event_id", null: false
@@ -51,9 +51,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_08_18_032914) do
     t.decimal "latitude"
     t.decimal "longitude"
     t.string "name"
-    t.integer "person_id"
     t.datetime "updated_at", null: false
-    t.index ["person_id"], name: "index_locations_on_person_id"
   end
 
   create_table "people", force: :cascade do |t|
@@ -65,6 +63,15 @@ ActiveRecord::Schema[8.1].define(version: 2026_08_18_032914) do
     t.string "image"
     t.string "name"
     t.datetime "updated_at", null: false
+  end
+
+  create_table "person_locations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.integer "location_id", null: false
+    t.integer "person_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["location_id"], name: "index_person_locations_on_location_id"
+    t.index ["person_id"], name: "index_person_locations_on_person_id"
   end
 
   create_table "resources", force: :cascade do |t|
@@ -104,6 +111,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_08_18_032914) do
   add_foreign_key "event_people", "events"
   add_foreign_key "event_people", "people"
   add_foreign_key "events", "topics"
-  add_foreign_key "locations", "people"
+  add_foreign_key "person_locations", "locations"
+  add_foreign_key "person_locations", "people"
   add_foreign_key "source_links", "resources"
 end

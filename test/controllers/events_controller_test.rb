@@ -2,10 +2,6 @@ require "test_helper"
 
 class EventsControllerTest < ActionDispatch::IntegrationTest
 
-# call the route .JSON
-# data = JSON.parse(response.body)
-# assert_response 200
-
   test "index" do
     get "/events.json"
     assert_response 200

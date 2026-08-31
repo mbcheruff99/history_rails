@@ -24,7 +24,7 @@ json.locations person.locations do |location|
   json.image location.image
 end
 
-json.resources event.resources do |source|
+json.resources person.resources do |source|
   json.id source.id
   json.title source.title
   json.author source.author

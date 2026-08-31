@@ -54,6 +54,12 @@ resource = Resource.create!(
 )
 puts "resource created"
 
+PersonLocation.create!(
+  person: person,
+  location: location
+)
+puts "person_location association created"
+
 EventPerson.create!(
   event: event,
   person: person

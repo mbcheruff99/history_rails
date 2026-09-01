@@ -7,6 +7,7 @@ one:
   source_type: MyString
   link: MyString
   description: MyText
+  year: 1
 
 two:
   title: MyString
@@ -15,3 +16,4 @@ two:
   source_type: MyString
   link: MyString
   description: MyText
+  year: 1

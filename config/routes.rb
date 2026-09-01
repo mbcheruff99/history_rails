@@ -25,4 +25,10 @@ Rails.application.routes.draw do
   patch "people/:id" => "people#update"
   delete "people/:id" => "people#destroy"
   
+  get "/resources" => "resources#index"
+  get "/resources/:id" => "resources#show"
+  post "/resources" => "resources#create"
+  patch "/resources/:id" => "resources#update"
+  delete "/resources/:id" => "resources#destroy"
+  
 end

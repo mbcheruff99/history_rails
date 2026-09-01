@@ -55,7 +55,7 @@ class ResourcesControllerTest < ActionDispatch::IntegrationTest
   test "destroy" do
     assert_difference "Resource.count", -1 do
       delete "/resources/#{Resource.first.id}.json"
-      assert_response 204
+      assert_response 200  
     end
   end
   

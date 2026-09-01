@@ -42,7 +42,7 @@ class TopicsControllerTest < ActionDispatch::IntegrationTest
   test "destroy" do 
     assert_difference "Topic.count", -1 do
       delete "/topics/#{Topic.first.id}.json"
-      assert_response 204
+      assert_response 200
     end
   end
   

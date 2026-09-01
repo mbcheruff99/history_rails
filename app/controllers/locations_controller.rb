@@ -32,7 +32,7 @@ class LocationsController < ApplicationController
 
   def destroy
     Location.find(params[:id]).destroy
-    render json: { message: "Location Successfully deleted"}, status: :no_content
+    render json: { message: "Location Successfully deleted"}
   end
 
   private

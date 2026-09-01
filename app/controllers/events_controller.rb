@@ -32,7 +32,7 @@ class EventsController < ApplicationController
     
   def destroy
     Event.find(params[:id]).destroy
-    render json: { message: "Event successfully deleted"}, status: :no_content
+    render json: { message: "Event successfully deleted"}
   end
   
   private

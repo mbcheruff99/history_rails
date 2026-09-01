@@ -32,7 +32,7 @@ class PeopleController < ApplicationController
 
   def destroy
     Person.find(params[:id]).destroy
-    render json: { message: "Person successfully deleted" }, status: :no_content
+    render json: { message: "Person successfully deleted" }
   end
   
 

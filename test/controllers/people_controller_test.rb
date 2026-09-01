@@ -56,7 +56,7 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
   test "destroy" do
     assert_difference "Person.count", -1 do
       delete "/people/#{Person.first.id}.json"
-      assert_response 204
+      assert_response 200  
     end
   end
   

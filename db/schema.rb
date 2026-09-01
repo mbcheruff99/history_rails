@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_08_31_024514) do
+ActiveRecord::Schema[8.1].define(version: 2026_09_01_030231) do
   create_table "event_locations", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.integer "event_id", null: false
@@ -71,6 +71,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_08_31_024514) do
     t.integer "person_id", null: false
     t.datetime "updated_at", null: false
     t.index ["location_id"], name: "index_person_locations_on_location_id"
+    t.index ["person_id", "location_id"], name: "index_person_locations_on_person_id_and_location_id", unique: true
     t.index ["person_id"], name: "index_person_locations_on_person_id"
   end
 

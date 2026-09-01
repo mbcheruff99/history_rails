@@ -32,7 +32,7 @@ class ResourcesController < ApplicationController
 
   def destroy
     Resource.find(params[:id]).destroy
-    render json: { message: "Resource successfully deleted" }, status: :no_content
+    render json: { message: "Resource successfully deleted" }
   end
   
   

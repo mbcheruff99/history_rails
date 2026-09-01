@@ -32,7 +32,7 @@ class TopicsController < ApplicationController
 
   def destroy
     Topic.find(params[:id]).destroy
-    render json: { message: "Topic successfully deleted"}, status: :no_content
+    render json: { message: "Topic successfully deleted"}
   end
   
   private

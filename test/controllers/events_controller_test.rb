@@ -56,8 +56,8 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
   
   test "destroy" do
     assert_difference "Event.count", -1 do
-      delete "/events/#{Event.first.id}.json" 
-      assert_response 204     
+      delete "/events/#{Event.first.id}.json"   
+      assert_response 200   
     end
   end
 end

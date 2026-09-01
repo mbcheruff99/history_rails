@@ -60,7 +60,7 @@ class LocationsControllerTest < ActionDispatch::IntegrationTest
   test "destroy" do
     assert_difference "Location.count", -1 do
       delete "/locations/#{Location.first.id}.json"
-      assert_response 204
+      assert_response 200  
     end
   end
   

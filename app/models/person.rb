@@ -9,4 +9,6 @@ class Person < ApplicationRecord
   has_many :person_locations, dependent: :destroy
   has_many :locations, through: :person_locations
 
+  validates :name, :date_display, presence: { message: "can't be blank"}
+
 end

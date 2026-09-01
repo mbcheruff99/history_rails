@@ -12,6 +12,8 @@ class Event < ApplicationRecord
 
   after_create :connect_people_to_locations
 
+  validates :name, :date_display, presence: { message: "can't be blank"}
+
   def connect_people_to_locations
     people.each do |person|
       locations.each do |location|
@@ -19,5 +21,7 @@ class Event < ApplicationRecord
       end
     end
   end
+
+
   
 end

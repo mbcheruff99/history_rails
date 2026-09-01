@@ -7,5 +7,7 @@ class Location < ApplicationRecord
 
   has_many :person_locations, dependent: :destroy
   has_many :people, through: :person_locations
-  
+
+  validates :name, :country, :continent, :latitude, :longitude, presence: { message: " can't be blank"}
+
 end

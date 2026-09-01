@@ -22,6 +22,7 @@ class ResourcesControllerTest < ActionDispatch::IntegrationTest
       "year",
       "organization",
       "description",
+      "source_type",
       "link",
       "created_at",
       "updated_at",
@@ -38,6 +39,7 @@ class ResourcesControllerTest < ActionDispatch::IntegrationTest
         author: "test",
         year: 123,
         organization: "test",
+        source_type: "test",
         link: "link", 
       }
       assert_response 201

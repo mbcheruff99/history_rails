@@ -45,6 +45,7 @@ class ResourcesController < ApplicationController
       :year,
       :organization,
       :description,
+      :source_type,
       :link,
       event_ids: [],
       person_ids: [],

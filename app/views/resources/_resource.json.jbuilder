@@ -4,6 +4,7 @@ json.author resource.author
 json.year resource.year
 json.organization resource.organization
 json.description resource.description
+json.source_type resource.source_type
 json.link resource.link
 json.created_at resource.created_at
 json.updated_at resource.updated_at
